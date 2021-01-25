@@ -163,9 +163,9 @@ function luaX:init()
     enums[str] = tok
   end
   self.tokens = tokens
-  print("UPDATED")
-  print(enums)
+  print("UPDATED 2")
   self.enums = enums
+  table.foreach(enums, print)
 end
 
 ------------------------------------------------------------------------
