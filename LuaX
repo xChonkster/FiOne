@@ -160,14 +160,14 @@ function luaX:init()
   local tokens, enums = {}, {}
   for v in string.gmatch(self.RESERVED, "[^\n]+") do
     local _, _, tok, str = string.find(v, "(%S+)%s+(%S+)")
+    print(str)
+    print(tok)
     tokens[tok] = str
     enums[str] = tok
   end
   self.tokens = tokens
-  print("UPDATED 2")
   ENUMTABLE = enums
   --self.enums = enums
-  table.foreach(enums, print)
 end
 
 ------------------------------------------------------------------------
