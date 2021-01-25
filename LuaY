@@ -1072,8 +1072,8 @@ function luaY:simpleexp(ls, v)
     self:init_exp(v, "VFALSE", 0)
   elseif c == "TK_DOTS" then  -- vararg
     local fs = ls.fs
-    self:check_condition(ls, fs.f.is_vararg ~= 0,
-                    "cannot use "..self:LUA_QL("...").." outside a vararg function");
+    --self:check_condition(ls, fs.f.is_vararg ~= 0,
+    --                "cannot use "..self:LUA_QL("...").." outside a vararg function");
     -- NOTE: the following substitutes for a bitop, but is value-specific
     local is_vararg = fs.f.is_vararg
     if is_vararg >= self.VARARG_NEEDSARG then
