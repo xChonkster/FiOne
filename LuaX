@@ -587,6 +587,8 @@ end
 -- main lexer function
 ------------------------------------------------------------------------
 function luaX:llex(ls, Token)
+  repeat wait() print("Waiting...") until self.enums
+  print(self.enums)
   ls.buff = ""
   while true do
     local c = ls.current
