@@ -75,6 +75,7 @@ local luaX = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkst
 local luaK = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/LuaK", true))()(luaY)
 local luaP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/LuaP", true))()
 
+luaX:init()
 --[[--------------------------------------------------------------------
 -- Expression descriptor
 -- * expkind changed to string constants; luaY:assignment was the only
