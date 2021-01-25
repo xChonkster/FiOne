@@ -5,8 +5,6 @@ local LuaU = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkst
 local FiOne = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/FiOne", true))()
 
 LuaX:init()
-repeat wait() print("Waiting...") until LuaX.enums
-print(LuaX.enums)
 
 local LuaState = {}
 
