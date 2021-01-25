@@ -155,6 +155,7 @@ luaX.LUA_COMPAT_LSTR = 1
 -- * luaX.tokens: TK_* -> token
 -- * luaX.enums:  token -> TK_* (used in luaX:llex)
 ------------------------------------------------------------------------
+local ENUMTABLE = {}
 function luaX:init()
   local tokens, enums = {}, {}
   for v in string.gmatch(self.RESERVED, "[^\n]+") do
@@ -164,7 +165,8 @@ function luaX:init()
   end
   self.tokens = tokens
   print("UPDATED 2")
-  self.enums = enums
+  ENUMTABLE = enums
+  --self.enums = enums
   table.foreach(enums, print)
 end
 
@@ -679,8 +681,8 @@ function luaX:llex(ls, Token)
         local ts = ls.buff
         print(ts)
         print(self)
-        print(self.enums)
-        local tok = self.enums[ts] ---------------------------------------------------- ???
+        print(ENUMTABLE)
+        local tok = ENUMTABLE[ts] ---------------------------------------------------- ???
         if tok then return tok end  -- reserved word?
         Token.seminfo = ts
         return "TK_NAME"
