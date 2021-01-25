@@ -155,7 +155,7 @@ luaX.LUA_COMPAT_LSTR = 1
 -- * luaX.tokens: TK_* -> token
 -- * luaX.enums:  token -> TK_* (used in luaX:llex)
 ------------------------------------------------------------------------
-local ENUMTABLE = {}
+
 function luaX:init()
   local tokens, enums = {}, {}
   for v in string.gmatch(self.RESERVED, "[^\n]+") do
@@ -587,8 +587,6 @@ end
 -- main lexer function
 ------------------------------------------------------------------------
 function luaX:llex(ls, Token)
-  repeat wait() print("Waiting...") until self.enums
-  print(self.enums)
   ls.buff = ""
   while true do
     local c = ls.current
