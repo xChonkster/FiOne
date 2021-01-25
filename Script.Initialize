@@ -1,0 +1,18 @@
+local hook
+hook = hookfunction(game.HttpGet, function(inst, url, ...) -- this hook isnt needed, just to monitor initialization progress here bc why not
+  print(url)
+  return hook(inst, url, ...)
+end)
+local exec_load = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/Main.lua", true))()
+getgenv().loadstring = function(Script)
+    local Source = [[
+    spawn(function() 
+        script = Instance.new("LocalScript")
+        script.Disabled = true
+        script.Parent = nil
+    ]] .. "\r\n" .. Script .. "end)"
+    local func, result = exec_load(Source)
+    if not func then return warn(result) end
+    return func()
+end
+print("Ready!")
