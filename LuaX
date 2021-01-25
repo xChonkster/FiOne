@@ -163,6 +163,8 @@ function luaX:init()
     enums[str] = tok
   end
   self.tokens = tokens
+  print("UPDATED")
+  print(enums)
   self.enums = enums
 end
 
@@ -675,7 +677,7 @@ function luaX:llex(ls, Token)
           c = self:save_and_next(ls)
         until c == "EOZ" or not string.find(c, "[_%w]")
         local ts = ls.buff
-        local tok = self.enums[ts]
+        local tok = self.enums[ts] ---------------------------------------------------- ???
         if tok then return tok end  -- reserved word?
         Token.seminfo = ts
         return "TK_NAME"
