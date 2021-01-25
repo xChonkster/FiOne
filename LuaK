@@ -60,6 +60,7 @@ local luaK = {}
 local luaP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/LuaP", true))()
 local luaX = loadstring(game:HttpGet("https://raw.githubusercontent.com/xChonkster/FiOne/main/LuaX", true))()
 
+luaX:init()
 ------------------------------------------------------------------------
 -- constants used by code generator
 ------------------------------------------------------------------------
